@@ -22,7 +22,7 @@ export default function Discord() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("https://api.lanyard.rest/v1/users/1297957381724176437");
+            const response = await fetch("https://api.lanyard.rest/v1/users/1351798725324046356");
             const data = await response.json();
             const userData = data.data.discord_user;
             const statusData = data.data.discord_status;
