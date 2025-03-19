@@ -23,115 +23,117 @@ import Navbar from "../components/Navbar.astro";
 			transform: translateX(-170%);
 		}
 	}
+	.heart {
+		color: pink;
+		font-size: 1.5rem;
+	}
+	.star {
+		color: gold;
+		font-size: 1.5rem;
+	}
+	.fire {
+		color: red;
+		font-size: 1.5rem;
+	}
 </style>
 
-<Layout title="My Skills">
+<Layout title="My Dance Journey">
 	<main>
 		<!-- navbar -->
         <Navbar />
 
 		<!-- hero -->
 		<AnimatedScroll client:load>
-			<div class="container px-32 p-4 mx-auto flex w-full">
-				<div class="mt-44 w-full">
+			<div class="container px-16 p-4 mx-auto flex w-full">
+				<div class="mt-20 w-full">
 					<div>
 						<div class="grid grid-cols-2 gap-4">
 							<div class="col-span-2 border-2 border-[#101010] bg-[#090909] p-4 rounded-lg shadow-lg">
-                                <p class="text-white text-2xl font-medium text-center">My Skills</p>
-                                <p class="text-gray-400 text-center">Here is an overview of my skills and expertise across various domains.</p>
+                                <p class="text-white text-2xl font-medium text-center">My Dance Journey</p>
+                                <p class="text-gray-400 text-center">Here is an overview of my journey and expertise in dance with Crewnique.</p>
                             </div>
 							<div class="border-2 border-[#101010] bg-[#090909] p-4 rounded-lg shadow-lg">
-                                <p class="text-white text-2xl font-medium text-center">Frontend</p>
-                                <p class="text-gray-400 text-center">I have about 6 years of frontend development experience.</p>
+                                <p class="text-white text-2xl font-medium text-center">Crewnique</p>
+                                <p class="text-gray-400 text-center">I'm passionate about dancing and have been part of Crewnique, creating amazing content and vibing to the latest trends! <span class="star">⭐</span></p>
 								<div class="border-b-2 border-purple-800 mx-auto w-24 mt-4 mb-4"></div>
 								<div class="scrolling-wrapper">
 									<div class="scrolling-container flex items-center gap-4">
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
 											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-8 w-8" />
+												<img draggable="false" src="crewnique.jpg" class="h-8 w-8" />
 											</div>
-											<span class="text-white font-medium">NextJS</span>
+											<span class="text-white font-medium">Crewnique</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
 											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-8 w-8" />
+												<img draggable="false" src="lunatix.png" class="h-8 w-8" />
 											</div>
-											<span class="text-white font-medium">ReactJS</span>
+											<span class="text-white font-medium">Lunatix</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">VueJS</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium star">⭐</span>
+											<span class="text-white font-medium">Dance</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">AstroJS</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium fire">🔥</span>
+											<span class="text-white font-medium">Content Creation</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">CSS</span>
-										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">HTML</span>
-										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">TailwindCSS</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium heart">💖</span>
+											<span class="text-white font-medium">Vibing</span>
 										</div>
 									</div>
 								</div>
                             </div>
                             <div class="border-2 border-[#101010] bg-[#090909] p-4 rounded-lg shadow-lg">
-                                <p class="text-white text-2xl font-medium text-center">Backend</p>
-                                <p class="text-gray-400 text-center">I don't have as much backend experience.</p>
+                                <p class="text-white text-2xl font-medium text-center">My Story</p>
+                                <p class="text-gray-400 text-center">Hey everyone! 😊 I'm Alina Brass, a content creator and dance influencer. I'm originally Russian but have been living in Germany for quite some time now. Over the years, I've had the amazing opportunity to connect with so many talented people, especially through the dance crew Lunatix. There, I met some incredible friends like Zahide, Chiara, Este, PureLuv, and many more.</p>
 								<div class="border-b-2 border-purple-800 mx-auto w-24 mt-4 mb-4"></div>
 								<div class="scrolling-wrapper">
 									<div class="scrolling-container flex items-center gap-4">
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">NodeJS</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium star">⭐</span>
+											<span class="text-white font-medium">Zahide</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">ExpressJS</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium fire">🔥</span>
+											<span class="text-white font-medium">Chiara</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">TypeScript</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium heart">💖</span>
+											<span class="text-white font-medium">Este</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">JavaScript</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium star">⭐</span>
+											<span class="text-white font-medium">Berkibooiii</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">MongoDB</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium fire">🔥</span>
+											<span class="text-white font-medium">asaliraniii</span>
 										</div>
-										<div class="transition-all duriation-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-											<div class="h-8 w-8">
-												<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="h-8 w-8" />
-											</div>
-											<span class="text-white font-medium">MySQL</span>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium heart">💖</span>
+											<span class="text-white font-medium">Junus</span>
+										</div>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium star">⭐</span>
+											<span class="text-white font-medium">catinca_thatscrazy2</span>
+										</div>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium fire">🔥</span>
+											<span class="text-white font-medium">sara.ak76</span>
+										</div>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium heart">💖</span>
+											<span class="text-white font-medium">yello.shawtyy</span>
+										</div>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium star">⭐</span>
+											<span class="text-white font-medium">maxipuuh</span>
+										</div>
+										<div class="transition-all duration-150 bg-[#101010] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+											<span class="text-white font-medium fire">🔥</span>
+											<span class="text-white font-medium">aangelsareangelic</span>
 										</div>
 									</div>
 								</div>
