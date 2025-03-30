@@ -6,58 +6,68 @@ import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout title="Hello, I'm Alina!">
-	<main>
-		<!-- navbar -->
-		<Navbar />
+	<main class="flex h-screen">
+		<div class="m-auto w-full">
+			<!-- navbar -->
+			<Navbar />
 
-		<!-- hero -->
-		<AnimatedScroll client:load>
-			<div class="container px-32 p-4 mx-auto flex w-full">
-				<div class="mt-44 w-full">
-					<div class="flex items-start justify-between">
-						<div class="w-[490px] max-w-[490px]">
-							<p class="text-white text-5xl font-medium">Hello, I'm Alina!</p>
-							<p class="text-gray-400 text-xl">A 17 year old Dancer from Russia🇷🇺.</p>
-							<div class="border-b-2 border-purple-800 w-24 mt-4 mb-4"></div>
-							<p class="text-gray-400">
+			<!-- hero -->
+			<AnimatedScroll client:load>
+				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
+					<div class="w-full">
+						<div class="flex items-start justify-between border-2 border-[#c084fc3b] bg-[#a955f71b] rounded-lg shadow-lg p-8">
+							<div class="md:w-[490px] md:max-w-[490px]">
+								<p class="text-white text-4xl md:text-5xl font-medium">Hello, I'm Alina!</p>
+								<p class="text-gray-300 md:text-xl">A 17 year old Developer/Dancer from Russia.</p>
+								<div class="border-b-2 border-[#c084fc3b] w-24 mt-4 mb-4"></div>
+								<p class="text-gray-300">Hey everyone! 😊 I'm Alina Brass, a content creator and dance influencer. I’m originally from Russia, but I’ve been living in Germany for a while now. Over the years, I’ve had the chance to meet so many amazing people, especially through the dance crew Lunatix. I’ve made some lifelong friends there, like Zahide, Chiara, Este, PureLuv, and so many others.
 
-Hey everyone! 😊
+Right now, as of March 2025, I’m 17, still living in Germany, and super proud of my Russian roots. 🇷🇺
 
-I'm Alina Brass, a content creator and dance influencer. I'm originally Russian, but I've been living in Germany for quite some time now. Over the years, I've had the amazing opportunity to connect with so many talented people, especially through the dance crew Lunatix. There, I met some incredible friends like Zahide, Chiara, Este, PureLuv, and many more.
+Honestly, things have been a bit rough lately. A lot has gone down unexpectedly with Lunatix and Crewnique, and it’s taken a huge emotional toll on me. The situation with Lunatix’s management, especially with Serdar, made me realize I had to step away from the crew. I wasn’t alone in that decision. Chiara, PureLuv, Samro, and some other close friends also decided to move on and join Crewnique.
 
-As of March 2025, I'm 17 years old and still living in Germany, proudly embracing my Russian roots. 🇷🇺
+Even though all this drama went down, we’re still dancing, creating, and keeping up with what we love most. 💃🎵
 
-Recently, things have been pretty tough. A lot of unexpected situations unfolded within Lunatix and Crewnique, which honestly took a big toll on me. Due to contract issues within Lunatix's management — particularly involving Serdar — I had to make the difficult decision to leave Lunatix. I wasn’t alone in this — familiar faces like Chiara, PureLuv, Samro, and others also decided to move on and join Crewnique. Despite the challenges, we're still doing what we love most — dancing, creating, and vibing to all the latest trends! 💃🎵
+But, it’s been hard. There’s been a lot of drama and misunderstandings. The worst part was seeing Serdar not take any responsibility for what happened and instead spread lies about us. On top of that, he manipulated Zahide — one of my closest friends — into blocking us. It was rough, because so many people believed the rumors and turned against us.
 
-Unfortunately, this whole situation came with a lot of drama. 😔 Serdar refused to take responsibility for what happened and even spread false rumors about us. Things escalated further when he manipulated one of our closest friends, Zahide, into blocking us. Those lies led to us being unfairly called out by supporters, and for a while, people believed we were the ones in the wrong.
+We didn’t want to just let it slide, so we went live on TikTok to share our side of the story. It was super emotional. We cried, we opened up about everything, and we just wanted to clear the air. 💔
 
-To clear things up, we went live on TikTok to explain the truth. It was emotional — we cried, we shared our side, and we opened up about the pain this situation caused. 💔 We lost friends along the way, but we’re hopeful that soon Zahide will see the truth and finally join us in Crewnique. 🤞
+We’ve lost some friends along the way, and it’s been tough, but we’re holding onto hope that Zahide will see the truth and come back to Crewnique. 🤞
 
-Thank you to everyone who’s supported us through this — your love means everything!💗</p>
-							<div class="flex items-center gap-4 mt-4">
-								<a href="https://youtube.com/@b1uq1337" target="_blank" class="transition-all duriation-150 border-2 border-[#101010] bg-[#090909] hover:border-purple-800 p-4 rounded-lg shadow-lg">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.99 5 20.01 14.01" class="h-6 w-6 fill-white">
-										<path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
-									</svg>
-								</a>
-								<a href="https://github.com/taffywaffylolz" target="_blank" class="transition-all duriation-150 border-2 border-[#101010] bg-[#090909] hover:border-purple-800 p-4 rounded-lg shadow-lg">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-6 w-6 fill-white">
-										<path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
-									</svg>
-								</a>
-								<a href="https://discord.gg/HdJnNDHkPd" target="_blank" class="transition-all duriation-150 border-2 border-[#101010] bg-[#090909] hover:border-purple-800 p-4 rounded-lg shadow-lg">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="h-6 w-6 fill-white">
-										<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
-									</svg>
-								</a>
+To everyone who’s been supporting us — I can’t even explain how much it means. Thank you for sticking with us. Your love and support really keep us going! 💗</p>
+								<div class="flex items-center gap-4 mt-4">
+									<a href="https://www.youtube.com/@alinaa_crew" target="_blank" class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg hover:-translate-y-2">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.99 5 20.01 14.01" class="h-6 w-6 fill-white">
+											<path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
+										</svg>
+									</a>
+									<a href="https://github.com/taffywaffylol" target="_blank" class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg hover:-translate-y-2">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-6 w-6 fill-white">
+											<path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+										</svg>
+									</a>
+									<a href="https://discord.gg/yqZEvkRaE5" target="_blank" class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg hover:-translate-y-2">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="h-6 w-6 fill-white">
+											<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+										</svg>
+									</a>
+									<!-- Add this in your <head> section for Font Awesome -->
+											<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+									<a href="https://www.tiktok.com/@alinaa.brss" target="_blank" class="transition-all duration-150 border-2 border-[#69c9d0] bg-[#69c9d01b] p-4 rounded-lg shadow-lg hover:-translate-y-2">
+									<!-- TikTok Icon using Font Awesome -->
+										<i class="fab fa-tiktok text-white text-xl"></i>
+									</a>
+
+								</div>
 							</div>
-						</div>
-						<div class="w-[490px] max-w-[490px]">
-							<Discord client:load />
+							<div class="w-[490px] max-w-[490px] hidden md:block">
+								<Discord client:load />
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</AnimatedScroll>
+			</AnimatedScroll>
+		</div>
 	</main>
 </Layout>
