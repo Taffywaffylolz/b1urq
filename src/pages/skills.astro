@@ -5,142 +5,118 @@ import Navbar from "../components/Navbar.astro";
 ---
 
 <style>
-	.scrolling-wrapper {
-		overflow-x: hidden;
-		width: 100%;
-	}
-	.scrolling-container {
-		animation: scroll 25s linear infinite;
-	}
-	@keyframes scroll {
-		0% {
-			transform: translateX(100%);
-		}
-		100% {
-			transform: translateX(-200%);
-		}
-	}
-	.category-title {
-		@apply text-white text-xl font-bold uppercase tracking-wide;
-	}
-	.badge {
-		@apply transition-all duration-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
-	}
-
-	/* Mimicked Logos */
-	.logo-node {
-		color: #3c873a;
-		font-weight: bold;
-	}
-	.logo-python {
-		color: #3472a6;
-		font-weight: bold;
-	}
-	.logo-rust {
-		font-family: monospace;
-		font-weight: bold;
-		color: #dea584;
-	}
-	.logo-cpp {
-		color: #00599C;
-		font-weight: bold;
-	}
-	.logo-cs {
-		color: #68217A;
-		font-weight: bold;
-	}
-	.logo-ts {
-		color: #007acc;
-		font-weight: bold;
-	}
-	.logo-java {
-		color: #f89820;
-		font-weight: bold;
-	}
-	.logo-luau {
-		color: #48CAE4;
-		font-style: italic;
-	}
-	.logo-go {
-		color: #00ADD8;
-		font-weight: bold;
-	}
+  .scrolling-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .scrolling-container {
+    animation: scroll 30s linear infinite;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+  .logo-card svg,
+  .logo-card img {
+    transition: all 0.3s ease;
+  }
+  .logo-card:hover svg,
+  .logo-card:hover img {
+    filter: drop-shadow(0 0 6px #a855f7);
+    transform: scale(1.05);
+  }
 </style>
 
 <Layout title="My Skills">
-	<main class="flex h-screen">
-		<div class="m-auto w-full">
-			<Navbar />
+  <main class="flex h-full">
+    <div class="m-auto w-full">
+      <Navbar />
 
-			<AnimatedScroll client:load>
-				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
-					<div class="w-full">
-						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
-							<p class="text-white text-2xl font-medium text-center">My Skills</p>
-							<p class="text-gray-300 text-center">Technologies, languages, and dance crews I've grown with.</p>
-							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
+      <AnimatedScroll client:load>
+        <div class="container px-4 md:px-32 py-12 mx-auto flex w-full flex-col gap-12">
+          <div class="text-white text-center">
+            <h1 class="text-4xl font-bold">My Skills</h1>
+            <p class="text-gray-300">Coding & Dance – what makes me, me.</p>
+          </div>
 
-							<!-- Frontend -->
-							<p class="category-title mb-2">Frontend</p>
-							<div class="scrolling-wrapper mb-6">
-								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">HTML5 🔶</span></div>
-									<div class="badge"><span class="text-white font-medium">CSS3 🎨</span></div>
-									<div class="badge"><span class="text-white font-medium">JavaScript ⚡</span></div>
-									<div class="badge"><span class="text-white font-medium">React ⚛️</span></div>
-									<div class="badge"><span class="text-white font-medium">Vue 🟩</span></div>
-									<div class="badge"><span class="text-white font-medium">Tailwind 💨</span></div>
-									<div class="badge"><span class="text-white font-medium">Svelte 🔥</span></div>
-									<div class="badge"><span class="text-white font-medium">Astro 🚀</span></div>
-								</div>
-							</div>
+          <!-- Frontend Section -->
+          <div>
+            <h2 class="text-white text-2xl font-semibold mb-4">Frontend</h2>
+            <div class="scrolling-wrapper">
+              <div class="scrolling-container flex items-center gap-6">
+                <!-- HTML5, CSS3, JS, React (already here) -->
+              </div>
+            </div>
+          </div>
 
-							<!-- Backend -->
-							<p class="category-title mb-2">Backend</p>
-							<div class="scrolling-wrapper mb-6">
-								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="logo-node">Node.js ⬢</span></div>
-									<div class="badge"><span class="text-white font-medium">Express.js ⚙️</span></div>
-									<div class="badge"><span class="text-white font-medium">Deno 🦕</span></div>
-									<div class="badge"><span class="text-white font-medium">FastAPI ⚡</span></div>
-									<div class="badge"><span class="text-white font-medium">Flask 🍶</span></div>
-									<div class="badge"><span class="text-white font-medium">Django 🧩</span></div>
-								</div>
-							</div>
+          <!-- Backend Section -->
+          <div>
+            <h2 class="text-white text-2xl font-semibold mb-4">Backend</h2>
+            <div class="scrolling-wrapper">
+              <div class="scrolling-container flex items-center gap-6">
+                <!-- Node.js -->
+                <div class="logo-card p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  <svg viewBox="0 0 256 272" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                    <path fill="#8CC84B" d="M127.9 0l111.1 64v128l-111.1 64L16.8 192V64z"/>
+                    <path fill="#FFF" d="M133 211.6c33.2 0 48.1-16.4 48.1-39.2 0-20.1-14.1-31.7-42.5-39.6-19.9-5.2-23.7-8.2-23.7-15.6 0-6.2 5.2-10.6 13.8-10.6 10.6 0 17.1 3.6 19 13.5h26.6c-1.1-18.2-13.6-30.7-33.4-34.3V67.3h-24.4v17.7c-20.6 4.7-32.8 18.5-32.8 36.9 0 19.8 14.2 31.4 41.9 38.6 17.5 4.7 24.3 8.3 24.3 16.7 0 7.6-6.3 12.3-16.3 12.3-12.5 0-19.2-4.5-21.5-15.3h-26.9c1.6 21.8 17.5 35.8 45.4 39.2v18.5H133z"/>
+                  </svg>
+                </div>
+                <!-- Express -->
+                <div class="logo-card text-white font-bold text-lg p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  Express.js
+                </div>
+              </div>
+            </div>
+          </div>
 
-							<!-- Languages -->
-							<p class="category-title mb-2">Languages</p>
-							<div class="scrolling-wrapper mb-6">
-								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="logo-cpp">C++ ➕➕</span></div>
-									<div class="badge"><span class="logo-cs">C# ♯</span></div>
-									<div class="badge"><span class="logo-python">Python 🐍</span></div>
-									<div class="badge"><span class="logo-rust">Rust ⚙️</span></div>
-									<div class="badge"><span class="logo-ts">TypeScript TS</span></div>
-									<div class="badge"><span class="logo-java">Java ☕</span></div>
-									<div class="badge"><span class="logo-go">Go 🐹</span></div>
-									<div class="badge"><span class="logo-luau">Luau 🌙</span></div>
-								</div>
-							</div>
+          <!-- Languages Section -->
+          <div>
+            <h2 class="text-white text-2xl font-semibold mb-4">Languages</h2>
+            <div class="scrolling-wrapper">
+              <div class="scrolling-container flex items-center gap-6">
+                <!-- C++ -->
+                <div class="logo-card text-white font-bold text-lg p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  C++
+                </div>
+                <!-- C# -->
+                <div class="logo-card text-white font-bold text-lg p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  C#
+                </div>
+                <!-- Python -->
+                <div class="logo-card text-white font-bold text-lg p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  Python
+                </div>
+                <!-- Rust -->
+                <div class="logo-card text-white font-bold text-lg p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  Rust
+                </div>
+              </div>
+            </div>
+          </div>
 
-							<!-- Dance -->
-							<p class="category-title mb-2">Dance</p>
-							<div class="scrolling-wrapper">
-								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">Dancing 🕺</span></div>
-									<div class="badge">
-										<img src="/public/crewnique.jpg" alt="Crewnique" class="h-8 object-contain rounded-sm" />
-									</div>
-									<div class="badge">
-										<img src="/public/lunatix.png" alt="Lunatix" class="h-8 object-contain rounded-sm" />
-									</div>
-								</div>
-							</div>
+          <!-- Dance Section -->
+          <div>
+            <h2 class="text-white text-2xl font-semibold mb-4">Dance</h2>
+            <div class="scrolling-wrapper">
+              <div class="scrolling-container flex items-center gap-6">
+                <!-- Crewnique Logo -->
+                <div class="logo-card p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  <img src="/assets/crewnique.svg" alt="Crewnique Logo" width="40" height="40" />
+                </div>
+                <!-- Lunatix Logo -->
+                <div class="logo-card p-4 rounded-xl bg-[#1f1f1f] border border-purple-500 shadow-md">
+                  <img src="/assets/lunatix.svg" alt="Lunatix Logo" width="40" height="40" />
+                </div>
+              </div>
+            </div>
+          </div>
 
-						</div>
-					</div>
-				</div>
-			</AnimatedScroll>
-		</div>
-	</main>
+        </div>
+      </AnimatedScroll>
+    </div>
+  </main>
 </Layout>
