@@ -1,4 +1,3 @@
----
 import Layout from "../layouts/Layout.astro";
 import AnimatedScroll from "../components/AnimatedScroll";
 import Navbar from "../components/Navbar.astro";
@@ -6,26 +5,94 @@ import Navbar from "../components/Navbar.astro";
 
 <style>
 	.scrolling-wrapper {
-		overflow-x: hidden;
-		width: 100%;
-	}
+        overflow-x: hidden;
+    	width: 100%;
+    }
 	.scrolling-container {
-		animation: scroll 25s linear infinite;
+		animation: scroll 20s linear infinite;
 	}
 	@keyframes scroll {
 		0% {
 			transform: translateX(100%);
 		}
 		100% {
-			transform: translateX(-200%);
+			transform: translateX(-170%);
 		}
 	}
-	.category-title {
-		@apply text-white text-xl font-bold uppercase tracking-wide;
-	}
-	.badge {
-		@apply transition-all duration-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
-	}
+    
+    /* Logo Styles */
+    .skill-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Specific logo designs */
+    .html-logo {
+        background: #E34F26;
+        color: white;
+    }
+    .css-logo {
+        background: #264DE4;
+        color: white;
+    }
+    .js-logo {
+        background: #F7DF1E;
+        color: black;
+    }
+    .node-logo {
+        background: #68A063;
+        position: relative;
+    }
+    .node-logo::before {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        background: rgba(255,255,255,0.1);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .python-logo {
+        background: linear-gradient(45deg, #3776AB 50%, #FFD43B 50%);
+    }
+    .csharp-logo {
+        background: #239120;
+        color: white;
+    }
+    .rust-logo {
+        background: #000;
+        color: #DEA584;
+    }
+    .cpp-logo {
+        background: linear-gradient(45deg, #659AD2 50%, #00599C 50%);
+    }
+    .crew-logo {
+        background: #FF6B6B;
+        color: white;
+    }
+    .luna-logo {
+        background: #4ECDC4;
+        color: white;
+    }
+    .react-logo {
+        background: #61DAFB;
+        color: #2D2D2D;
+    }
+    .vue-logo {
+        background: #41B883;
+        color: #34495E;
+    }
+    .java-logo {
+        background: #007396;
+        color: white;
+    }
+    .go-logo {
+        background: #00ADD8;
+        color: white;
+    }
 </style>
 
 <Layout title="My Skills">
@@ -38,66 +105,92 @@ import Navbar from "../components/Navbar.astro";
 					<div class="w-full">
 						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
 							<p class="text-white text-2xl font-medium text-center">My Skills</p>
-							<p class="text-gray-300 text-center">Here’s a look at all the technologies, languages, and dance crews that are a part of my journey.</p>
+							<p class="text-gray-300 text-center">Expertise across various domains of software development and dance</p>
 							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
-
+							
 							<!-- Frontend -->
-							<p class="category-title mb-2">Frontend</p>
-							<div class="scrolling-wrapper mb-6">
+							<div class="scrolling-wrapper mb-8">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">HTML5 🔶</span></div>
-									<div class="badge"><span class="text-white font-medium">CSS3 🎨</span></div>
-									<div class="badge"><span class="text-white font-medium">JavaScript ⚡</span></div>
-									<div class="badge"><span class="text-white font-medium">React ⚛️</span></div>
-									<div class="badge"><span class="text-white font-medium">Vue 🟩</span></div>
-									<div class="badge"><span class="text-white font-medium">Tailwind 💨</span></div>
-									<div class="badge"><span class="text-white font-medium">Svelte 🔥</span></div>
-									<div class="badge"><span class="text-white font-medium">Astro 🚀</span></div>
+									<h3 class="text-white text-xl font-bold mr-4">Frontend 🎨</h3>
+									<div class="skill-card">
+										<div class="skill-logo html-logo">HTML</div>
+										<span class="text-white">HTML5</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo css-logo">CSS</div>
+										<span class="text-white">CSS3</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo js-logo">JS</div>
+										<span class="text-white">JavaScript</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo react-logo">⚛️</div>
+										<span class="text-white">React</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo vue-logo">VUE</div>
+										<span class="text-white">Vue.js</span>
+									</div>
 								</div>
 							</div>
 
 							<!-- Backend -->
-							<p class="category-title mb-2">Backend</p>
-							<div class="scrolling-wrapper mb-6">
+							<div class="scrolling-wrapper mb-8">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">Node.js 🟢</span></div>
-									<div class="badge"><span class="text-white font-medium">Express.js ⚙️</span></div>
-									<div class="badge"><span class="text-white font-medium">Deno 🦕</span></div>
-									<div class="badge"><span class="text-white font-medium">FastAPI ⚡</span></div>
-									<div class="badge"><span class="text-white font-medium">Flask 🍶</span></div>
-									<div class="badge"><span class="text-white font-medium">Django 🧩</span></div>
+									<h3 class="text-white text-xl font-bold mr-4">Backend ⚙️</h3>
+									<div class="skill-card">
+										<div class="skill-logo node-logo"></div>
+										<span class="text-white">Node.js</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo python-logo">🐍</div>
+										<span class="text-white">Python</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo csharp-logo">C#</div>
+										<span class="text-white">C#</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo rust-logo">🦀</div>
+										<span class="text-white">Rust</span>
+									</div>
 								</div>
 							</div>
 
-							<!-- Languages -->
-							<p class="category-title mb-2">Languages</p>
-							<div class="scrolling-wrapper mb-6">
+							<!-- Other Languages -->
+							<div class="scrolling-wrapper mb-8">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">C++ 💻</span></div>
-									<div class="badge"><span class="text-white font-medium">C# 🧱</span></div>
-									<div class="badge"><span class="text-white font-medium">Python 🐍</span></div>
-									<div class="badge"><span class="text-white font-medium">Java ☕</span></div>
-									<div class="badge"><span class="text-white font-medium">TypeScript 🔷</span></div>
-									<div class="badge"><span class="text-white font-medium">Rust 🦀</span></div>
-									<div class="badge"><span class="text-white font-medium">Go 🐹</span></div>
-									<div class="badge"><span class="text-white font-medium">Luau 🌙</span></div>
+									<h3 class="text-white text-xl font-bold mr-4">Languages 💻</h3>
+									<div class="skill-card">
+										<div class="skill-logo cpp-logo">C++</div>
+										<span class="text-white">C++</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo java-logo">☕</div>
+										<span class="text-white">Java</span>
+									</div>
+									<div class="skill-card">
+										<div class="skill-logo go-logo">GO</div>
+										<span class="text-white">Go</span>
+									</div>
 								</div>
 							</div>
 
 							<!-- Dance -->
-							<p class="category-title mb-2">Dance</p>
 							<div class="scrolling-wrapper">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">Dancing 🕺</span></div>
-									<div class="badge">
-										<span class="text-purple-400 font-bold tracking-widest">CREWNIQUE</span>
+									<h3 class="text-white text-xl font-bold mr-4">Dance 💃</h3>
+									<div class="skill-card">
+										<div class="skill-logo crew-logo">CN</div>
+										<span class="text-white">CrewNique</span>
 									</div>
-									<div class="badge">
-										<span class="text-pink-400 font-bold tracking-widest">LUNATIX</span>
+									<div class="skill-card">
+										<div class="skill-logo luna-logo">LX</div>
+										<span class="text-white">Lunatix</span>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
