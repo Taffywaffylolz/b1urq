@@ -9,98 +9,102 @@ import Navbar from "../components/Navbar.astro";
     overflow-x: hidden;
     width: 100%;
   }
-
   .scrolling-container {
-    animation: scroll 25s linear infinite;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    animation: scroll 30s linear infinite;
   }
-
   @keyframes scroll {
     0% {
       transform: translateX(100%);
     }
     100% {
-      transform: translateX(-170%);
+      transform: translateX(-200%);
     }
   }
-
-  .glow {
-    transition: box-shadow 0.3s ease;
-  }
-
   .glow:hover {
-    box-shadow: 0 0 12px 2px #a855f7, 0 0 18px 4px #9333ea;
+    filter: drop-shadow(0 0 8px #a855f7);
   }
 </style>
 
 <Layout title="My Skills">
-  <main class="flex h-full min-h-screen">
+  <main class="flex h-screen">
     <div class="m-auto w-full">
       <!-- navbar -->
       <Navbar />
 
-      <!-- hero -->
+      <!-- Skills section -->
       <AnimatedScroll client:load>
         <div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
           <div class="w-full">
             <div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
               <p class="text-white text-2xl font-medium text-center">My Skills</p>
-              <p class="text-gray-300 text-center">Here are the tools, languages, and passions that define my creative & coding journey.</p>
+              <p class="text-gray-300 text-center">All the tools and art forms I’ve mastered along the way.</p>
               <div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
 
               <!-- Frontend -->
-              <p class="text-white font-semibold text-lg mb-2">Frontend</p>
               <div class="scrolling-wrapper">
-                <div class="scrolling-container">
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">HTML</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">CSS</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">JavaScript</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">TypeScript</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">React</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">Astro</div>
+                <div class="scrolling-container flex items-center gap-6">
+                  <h2 class="text-xl text-purple-400 font-bold">Frontend</h2>
+                  <div class="glow flex items-center gap-2 bg-black px-4 py-2 rounded shadow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="32" height="32">
+                      <path fill="#1572B6" d="M19.4 3.2l9.2 103.6L64 124.8l35.4-18 9.2-103.6H19.4z"/>
+                      <path fill="#33A9DC" d="M64 116.1l28.6-14.5 7.9-88.8H64V116.1z"/>
+                      <path fill="#fff" d="M64 66.7H45.3l-1-11.5h19.7V44.4H31.5l.3 3.9 3 33.9H64v-15.5z"/>
+                      <path fill="#EBEBEB" d="M64 92.5l-.1.1-15.9-8.1-1-11.2H35.8l2 23 26.2 13.3.1-.1V92.5z"/>
+                      <path fill="#fff" d="M64 66.7v15.5h17.5l-1.7 18.9-15.8 8.1v15.5l26.3-13.4 2.1-23.7H64z"/>
+                      <path fill="#EBEBEB" d="M64 44.4v10.8h19.2l.5-6.3.3-4.5H64z"/>
+                    </svg>
+                    <span class="text-white font-medium">HTML</span>
+                  </div>
+                  <!-- Add CSS, JS, Tailwind, Astro here similarly -->
                 </div>
               </div>
 
               <!-- Backend -->
-              <p class="text-white font-semibold text-lg mt-8 mb-2">Backend</p>
-              <div class="scrolling-wrapper">
-                <div class="scrolling-container">
-                  <div class="glow flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 272" class="w-6 h-6">
-                      <path fill="#8CC84B" d="M127.8 0 15.6 64v144l112.2 64 112.2-64V64z"/>
-                      <path fill="#fff" d="m157.1 179.3-8.9-5.4c-1.8-1.1-4.1-.5-5.1 1.3-2.7 4.6-6.3 8.4-13.1 8.4-6.7 0-10.9-3.3-10.9-11.5V136h26.2c2 0 3.7-1.7 3.7-3.7v-10.6c0-2-1.7-3.7-3.7-3.7h-26.2v-20.3c0-2-1.7-3.7-3.7-3.7h-14.2c-2 0-3.7 1.7-3.7 3.7v56.9c0 16.6 9.8 26.3 25.3 26.3 11.8 0 18.8-5.9 22.5-13.5 0.8-1.8 0.2-4-1.5-5.1z"/>
+              <div class="scrolling-wrapper mt-10">
+                <div class="scrolling-container flex items-center gap-6">
+                  <h2 class="text-xl text-purple-400 font-bold">Backend</h2>
+                  <div class="glow flex items-center gap-2 bg-black px-4 py-2 rounded shadow">
+                    <!-- Node.js SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 288" width="32" height="32">
+                      <path fill="#539E43" d="M128 .003L0 72v144l128 72 128-72V72z"/>
+                      <path fill="#000" d="M128 16.2l112 63.3v126.9L128 270.7 16 206.4V79.5z"/>
+                      <path fill="#539E43" d="M138.8 193.3c0 13.6-7.9 22-21.5 22-11.5 0-18.3-5.9-21.7-14l13.8-8c2.6 4.5 4.9 7.9 10.6 7.9 5.4 0 8.8-2.1 8.8-10.3v-55.4h20z"/>
                     </svg>
-                    <span class="font-medium">Node.js</span>
+                    <span class="text-white font-medium">Node.js</span>
                   </div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">Express.js</div>
+                  <!-- Add Express.js, etc -->
                 </div>
               </div>
 
               <!-- Languages -->
-              <p class="text-white font-semibold text-lg mt-8 mb-2">Languages</p>
-              <div class="scrolling-wrapper">
-                <div class="scrolling-container">
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">C++</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">C#</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">Python</div>
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg font-medium">Rust</div>
+              <div class="scrolling-wrapper mt-10">
+                <div class="scrolling-container flex items-center gap-6">
+                  <h2 class="text-xl text-purple-400 font-bold">Languages</h2>
+                  <div class="glow flex items-center gap-2 bg-black px-4 py-2 rounded shadow">
+                    <!-- Python SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="32" height="32">
+                      <path fill="#3776AB" d="M64 0C34.2 0 27 14.4 27 25v15h38v6H27c-14 0-25 10.5-25 26 0 15.5 10.5 26 25 26h9v-18H38c-6 0-9-5.5-9-10.5S32 57 38 57h26v15h38V25c0-15-7-25-38-25z"/>
+                      <circle cx="44" cy="14" r="5" fill="#fff"/>
+                      <path fill="#FFD43B" d="M64 128c29.8 0 38-14.4 38-25V88H64v-6h38c14 0 25-10.5 25-26S116.5 30 102 30h-9v18h9c6 0 9 5.5 9 10.5s-3 10.5-9 10.5H64V53H26v50c0 15 7 25 38 25z"/>
+                      <circle cx="84" cy="114" r="5" fill="#fff"/>
+                    </svg>
+                    <span class="text-white font-medium">Python</span>
+                  </div>
+                  <!-- Add Rust, C++, C#, JS, etc -->
                 </div>
               </div>
 
-              <!-- Dance Crews -->
-              <p class="text-white font-semibold text-lg mt-8 mb-2">Dance</p>
-              <div class="scrolling-wrapper">
-                <div class="scrolling-container">
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-                    <img src="/assets/crewnique.svg" alt="Crewnique Logo" class="h-6 w-6"/>
-                    <span class="font-medium">Crewnique</span>
+              <!-- Dance -->
+              <div class="scrolling-wrapper mt-10">
+                <div class="scrolling-container flex items-center gap-6">
+                  <h2 class="text-xl text-purple-400 font-bold">Dance</h2>
+                  <div class="glow flex items-center gap-2 bg-black px-4 py-2 rounded shadow">
+                    <img src="/images/crewnique.svg" alt="Crewnique" width="32" height="32" />
+                    <span class="text-white font-medium">Crewnique</span>
                   </div>
-
-                  <div class="glow bg-black text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-                    <img src="/assets/lunatix.svg" alt="Lunatix Logo" class="h-6 w-6"/>
-                    <span class="font-medium">Lunatix</span>
+                  <div class="glow flex items-center gap-2 bg-black px-4 py-2 rounded shadow">
+                    <img src="/images/lunatix.svg" alt="Lunatix" width="32" height="32" />
+                    <span class="text-white font-medium">Lunatix</span>
                   </div>
                 </div>
               </div>
