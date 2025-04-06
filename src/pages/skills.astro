@@ -26,17 +26,45 @@ import Navbar from "../components/Navbar.astro";
 	.badge {
 		@apply transition-all duration-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
 	}
-	.logo-box {
-		@apply w-6 h-6 rounded-sm flex items-center justify-center text-xs font-bold text-white;
+
+	/* Mimicked Logos */
+	.logo-node {
+		color: #3c873a;
+		font-weight: bold;
 	}
-	.logo-cpp { background-color: #00599C; }      /* C++ Blue */
-	.logo-cs { background-color: #9B4F96; }        /* C# Purple */
-	.logo-python { background-color: #306998; }    /* Python Blue */
-	.logo-rust { background-color: #000000; }      /* Rust Black */
-	.logo-java { background-color: #EA2D2E; }      /* Java Red */
-	.logo-ts { background-color: #007ACC; }        /* TypeScript Blue */
-	.logo-go { background-color: #00ADD8; }        /* Go Blue */
-	.logo-luau { background-color: #6E6E6E; }       /* Lua Gray */
+	.logo-python {
+		color: #3472a6;
+		font-weight: bold;
+	}
+	.logo-rust {
+		font-family: monospace;
+		font-weight: bold;
+		color: #dea584;
+	}
+	.logo-cpp {
+		color: #00599C;
+		font-weight: bold;
+	}
+	.logo-cs {
+		color: #68217A;
+		font-weight: bold;
+	}
+	.logo-ts {
+		color: #007acc;
+		font-weight: bold;
+	}
+	.logo-java {
+		color: #f89820;
+		font-weight: bold;
+	}
+	.logo-luau {
+		color: #48CAE4;
+		font-style: italic;
+	}
+	.logo-go {
+		color: #00ADD8;
+		font-weight: bold;
+	}
 </style>
 
 <Layout title="My Skills">
@@ -49,7 +77,7 @@ import Navbar from "../components/Navbar.astro";
 					<div class="w-full">
 						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
 							<p class="text-white text-2xl font-medium text-center">My Skills</p>
-							<p class="text-gray-300 text-center">Here’s a look at all the technologies, languages, and dance crews that are a part of my journey.</p>
+							<p class="text-gray-300 text-center">Technologies, languages, and dance crews I've grown with.</p>
 							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
 
 							<!-- Frontend -->
@@ -71,7 +99,7 @@ import Navbar from "../components/Navbar.astro";
 							<p class="category-title mb-2">Backend</p>
 							<div class="scrolling-wrapper mb-6">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge"><span class="text-white font-medium">Node.js 🟢</span></div>
+									<div class="badge"><span class="logo-node">Node.js ⬢</span></div>
 									<div class="badge"><span class="text-white font-medium">Express.js ⚙️</span></div>
 									<div class="badge"><span class="text-white font-medium">Deno 🦕</span></div>
 									<div class="badge"><span class="text-white font-medium">FastAPI ⚡</span></div>
@@ -84,38 +112,14 @@ import Navbar from "../components/Navbar.astro";
 							<p class="category-title mb-2">Languages</p>
 							<div class="scrolling-wrapper mb-6">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="badge">
-										<div class="logo-box logo-cpp">C++</div>
-										<span class="text-white font-medium">C++</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-cs">C#</div>
-										<span class="text-white font-medium">C#</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-python">Py</div>
-										<span class="text-white font-medium">Python</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-rust">R</div>
-										<span class="text-white font-medium">Rust</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-java">J</div>
-										<span class="text-white font-medium">Java</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-ts">TS</div>
-										<span class="text-white font-medium">TypeScript</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-go">Go</div>
-										<span class="text-white font-medium">Go</span>
-									</div>
-									<div class="badge">
-										<div class="logo-box logo-luau">Lu</div>
-										<span class="text-white font-medium">Luau</span>
-									</div>
+									<div class="badge"><span class="logo-cpp">C++ ➕➕</span></div>
+									<div class="badge"><span class="logo-cs">C# ♯</span></div>
+									<div class="badge"><span class="logo-python">Python 🐍</span></div>
+									<div class="badge"><span class="logo-rust">Rust ⚙️</span></div>
+									<div class="badge"><span class="logo-ts">TypeScript TS</span></div>
+									<div class="badge"><span class="logo-java">Java ☕</span></div>
+									<div class="badge"><span class="logo-go">Go 🐹</span></div>
+									<div class="badge"><span class="logo-luau">Luau 🌙</span></div>
 								</div>
 							</div>
 
@@ -125,12 +129,10 @@ import Navbar from "../components/Navbar.astro";
 								<div class="scrolling-container flex items-center gap-4">
 									<div class="badge"><span class="text-white font-medium">Dancing 🕺</span></div>
 									<div class="badge">
-										<img src="/crewnique.jpg" alt="Crewnique" class="h-8 rounded-sm" />
-										<span class="text-white font-medium">Crewnique</span>
+										<img src="/images/crewnique.jpg" alt="Crewnique" class="h-8 object-contain rounded-sm" />
 									</div>
 									<div class="badge">
-										<img src="/lunatix.png" alt="Lunatix" class="h-8 rounded-sm" />
-										<span class="text-white font-medium">Lunatix</span>
+										<img src="/images/lunatix.png" alt="Lunatix" class="h-8 object-contain rounded-sm" />
 									</div>
 								</div>
 							</div>
