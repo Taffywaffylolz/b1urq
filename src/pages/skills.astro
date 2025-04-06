@@ -1,3 +1,4 @@
+---
 import Layout from "../layouts/Layout.astro";
 import AnimatedScroll from "../components/AnimatedScroll";
 import Navbar from "../components/Navbar.astro";
@@ -19,175 +20,108 @@ import Navbar from "../components/Navbar.astro";
 			transform: translateX(-170%);
 		}
 	}
-    
-    /* Logo Styles */
-    .skill-logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    /* Specific logo designs */
-    .html-logo {
-        background: #E34F26;
-        color: white;
-    }
-    .css-logo {
-        background: #264DE4;
-        color: white;
-    }
-    .js-logo {
-        background: #F7DF1E;
-        color: black;
-    }
-    .node-logo {
-        background: #68A063;
-        position: relative;
-    }
-    .node-logo::before {
-        content: "";
-        position: absolute;
-        width: 60%;
-        height: 60%;
-        background: rgba(255,255,255,0.1);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    }
-    .python-logo {
-        background: linear-gradient(45deg, #3776AB 50%, #FFD43B 50%);
-    }
-    .csharp-logo {
-        background: #239120;
-        color: white;
-    }
-    .rust-logo {
-        background: #000;
-        color: #DEA584;
-    }
-    .cpp-logo {
-        background: linear-gradient(45deg, #659AD2 50%, #00599C 50%);
-    }
-    .crew-logo {
-        background: #FF6B6B;
-        color: white;
-    }
-    .luna-logo {
-        background: #4ECDC4;
-        color: white;
-    }
-    .react-logo {
-        background: #61DAFB;
-        color: #2D2D2D;
-    }
-    .vue-logo {
-        background: #41B883;
-        color: #34495E;
-    }
-    .java-logo {
-        background: #007396;
-        color: white;
-    }
-    .go-logo {
-        background: #00ADD8;
-        color: white;
-    }
+	.category-title {
+		color: #c084fc;
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin: 1rem 0;
+	}
+	.language-item {
+		border: 2px solid #c084fc;
+		background: rgba(169, 85, 247, 0.1);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.language-logo {
+		width: 20px; /* Adjust size as needed */
+		height: 20px; /* Adjust size as needed */
+	}
 </style>
 
 <Layout title="My Skills">
 	<main class="flex h-screen">
 		<div class="m-auto w-full">
+			<!-- navbar -->
 			<Navbar />
 
+			<!-- hero -->
 			<AnimatedScroll client:load>
 				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
 					<div class="w-full">
 						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
 							<p class="text-white text-2xl font-medium text-center">My Skills</p>
-							<p class="text-gray-300 text-center">Expertise across various domains of software development and dance</p>
+							<p class="text-gray-300 text-center">Here are the programming languages and technologies I work with.</p>
 							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
-							
-							<!-- Frontend -->
-							<div class="scrolling-wrapper mb-8">
-								<div class="scrolling-container flex items-center gap-4">
-									<h3 class="text-white text-xl font-bold mr-4">Frontend 🎨</h3>
-									<div class="skill-card">
-										<div class="skill-logo html-logo">HTML</div>
-										<span class="text-white">HTML5</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo css-logo">CSS</div>
-										<span class="text-white">CSS3</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo js-logo">JS</div>
-										<span class="text-white">JavaScript</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo react-logo">⚛️</div>
-										<span class="text-white">React</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo vue-logo">VUE</div>
-										<span class="text-white">Vue.js</span>
-									</div>
-								</div>
-							</div>
-
-							<!-- Backend -->
-							<div class="scrolling-wrapper mb-8">
-								<div class="scrolling-container flex items-center gap-4">
-									<h3 class="text-white text-xl font-bold mr-4">Backend ⚙️</h3>
-									<div class="skill-card">
-										<div class="skill-logo node-logo"></div>
-										<span class="text-white">Node.js</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo python-logo">🐍</div>
-										<span class="text-white">Python</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo csharp-logo">C#</div>
-										<span class="text-white">C#</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo rust-logo">🦀</div>
-										<span class="text-white">Rust</span>
-									</div>
-								</div>
-							</div>
-
-							<!-- Other Languages -->
-							<div class="scrolling-wrapper mb-8">
-								<div class="scrolling-container flex items-center gap-4">
-									<h3 class="text-white text-xl font-bold mr-4">Languages 💻</h3>
-									<div class="skill-card">
-										<div class="skill-logo cpp-logo">C++</div>
-										<span class="text-white">C++</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo java-logo">☕</div>
-										<span class="text-white">Java</span>
-									</div>
-									<div class="skill-card">
-										<div class="skill-logo go-logo">GO</div>
-										<span class="text-white">Go</span>
-									</div>
-								</div>
-							</div>
-
-							<!-- Dance -->
 							<div class="scrolling-wrapper">
 								<div class="scrolling-container flex items-center gap-4">
-									<h3 class="text-white text-xl font-bold mr-4">Dance 💃</h3>
-									<div class="skill-card">
-										<div class="skill-logo crew-logo">CN</div>
-										<span class="text-white">CrewNique</span>
+									<!-- Frontend Languages -->
+									<div>
+										<p class="category-title">Frontend</p>
+										<div class="language-item">
+											<span class="language-logo">HTML</span>
+											<span class="text-white font-medium">HTML5</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">CSS</span>
+											<span class="text-white font-medium">CSS3</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">JS</span>
+											<span class="text-white font-medium">JavaScript</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">React</span>
+											<span class="text-white font-medium">React.js</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">Vue</span>
+											<span class="text-white font-medium">Vue.js</span>
+										</div>
 									</div>
-									<div class="skill-card">
-										<div class="skill-logo luna-logo">LX</div>
-										<span class="text-white">Lunatix</span>
+
+									<!-- Backend Languages -->
+									<div>
+										<p class="category-title">Backend</p>
+										<div class="language-item">
+											<span class="language-logo">Node</span>
+											<span class="text-white font-medium">Node.js</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">Python</span>
+											<span class="text-white font-medium">Python</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">C#</span>
+											<span class="text-white font-medium">C#</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">C++</span>
+											<span class="text-white font-medium">C++</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">Rust</span>
+											<span class="text-white font-medium">Rust</span>
+										</div>
+									</div>
+
+									<!-- Other Languages -->
+									<div>
+										<p class="category-title">Other Languages</p>
+										<div class="language-item">
+											<span class="language-logo">Web</span>
+											<span class="text-white font-medium">Web Development</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">Dance</span>
+											<span class="text-white font-medium">Dancing</span>
+										</div>
+										<div class="language-item">
+											<span class="language-logo">Lunatix</span>
+											<span class="text-white font-medium">Lunatix Crew</span>
+										</div>
 									</div>
 								</div>
 							</div>
