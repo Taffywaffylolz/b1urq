@@ -6,82 +6,98 @@ import Navbar from "../components/Navbar.astro";
 
 <style>
 	.scrolling-wrapper {
-        overflow-x: hidden;
-    	width: 100%;
-    }
+		overflow-x: hidden;
+		width: 100%;
+	}
 	.scrolling-container {
-		animation: scroll 20s linear infinite;
+		animation: scroll 25s linear infinite;
 	}
 	@keyframes scroll {
 		0% {
 			transform: translateX(100%);
 		}
 		100% {
-			transform: translateX(-170%);
+			transform: translateX(-200%);
 		}
+	}
+	.category-title {
+		@apply text-white text-xl font-bold uppercase tracking-wide;
+	}
+	.badge {
+		@apply transition-all duration-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
 	}
 </style>
 
-<Layout title="My Friends">
+<Layout title="My Skills">
 	<main class="flex h-screen">
 		<div class="m-auto w-full">
-			<!-- navbar -->
 			<Navbar />
 
-			<!-- hero -->
 			<AnimatedScroll client:load>
 				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
 					<div class="w-full">
 						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
-							<p class="text-white text-2xl font-medium text-center">My Friends</p>
-							<p class="text-gray-300 text-center">Here are some amazing people I've had the pleasure to meet through my journey in dance.</p>
+							<p class="text-white text-2xl font-medium text-center">My Skills</p>
+							<p class="text-gray-300 text-center">Here’s a look at all the technologies, languages, and dance crews that are a part of my journey.</p>
 							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
+
+							<!-- Frontend -->
+							<p class="category-title mb-2">Frontend</p>
+							<div class="scrolling-wrapper mb-6">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge"><span class="text-white font-medium">HTML5 🔶</span></div>
+									<div class="badge"><span class="text-white font-medium">CSS3 🎨</span></div>
+									<div class="badge"><span class="text-white font-medium">JavaScript ⚡</span></div>
+									<div class="badge"><span class="text-white font-medium">React ⚛️</span></div>
+									<div class="badge"><span class="text-white font-medium">Vue 🟩</span></div>
+									<div class="badge"><span class="text-white font-medium">Tailwind 💨</span></div>
+									<div class="badge"><span class="text-white font-medium">Svelte 🔥</span></div>
+									<div class="badge"><span class="text-white font-medium">Astro 🚀</span></div>
+								</div>
+							</div>
+
+							<!-- Backend -->
+							<p class="category-title mb-2">Backend</p>
+							<div class="scrolling-wrapper mb-6">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge"><span class="text-white font-medium">Node.js 🟢</span></div>
+									<div class="badge"><span class="text-white font-medium">Express.js ⚙️</span></div>
+									<div class="badge"><span class="text-white font-medium">Deno 🦕</span></div>
+									<div class="badge"><span class="text-white font-medium">FastAPI ⚡</span></div>
+									<div class="badge"><span class="text-white font-medium">Flask 🍶</span></div>
+									<div class="badge"><span class="text-white font-medium">Django 🧩</span></div>
+								</div>
+							</div>
+
+							<!-- Languages -->
+							<p class="category-title mb-2">Languages</p>
+							<div class="scrolling-wrapper mb-6">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge"><span class="text-white font-medium">C++ 💻</span></div>
+									<div class="badge"><span class="text-white font-medium">C# 🧱</span></div>
+									<div class="badge"><span class="text-white font-medium">Python 🐍</span></div>
+									<div class="badge"><span class="text-white font-medium">Java ☕</span></div>
+									<div class="badge"><span class="text-white font-medium">TypeScript 🔷</span></div>
+									<div class="badge"><span class="text-white font-medium">Rust 🦀</span></div>
+									<div class="badge"><span class="text-white font-medium">Go 🐹</span></div>
+									<div class="badge"><span class="text-white font-medium">Luau 🌙</span></div>
+								</div>
+							</div>
+
+							<!-- Dance -->
+							<p class="category-title mb-2">Dance</p>
 							<div class="scrolling-wrapper">
 								<div class="scrolling-container flex items-center gap-4">
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Zahide 🦋</span>
+									<div class="badge"><span class="text-white font-medium">Dancing 🕺</span></div>
+									<div class="badge">
+										<span class="text-purple-400 font-bold tracking-widest">CREWNIQUE</span>
 									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Chiara 🌻</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Este 🎨</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">PureLuv 💖</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Samro 🔥</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Zara 🌟</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Kian ⚡</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Luca 🍀</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Maya ✨</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Noah 🦄</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Elena 🌙</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Leo 🍓</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Mia 🌸</span>
-									</div>
-									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-										<span class="text-white font-medium">Aria 🎤</span>
+									<div class="badge">
+										<span class="text-pink-400 font-bold tracking-widest">LUNATIX</span>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
