@@ -6,125 +6,135 @@ import Navbar from "../components/Navbar.astro";
 
 <style>
 	.scrolling-wrapper {
-        overflow-x: hidden;
-    	width: 100%;
-    }
+		overflow-x: hidden;
+		width: 100%;
+	}
 	.scrolling-container {
-		animation: scroll 20s linear infinite;
+		animation: scroll 25s linear infinite;
 	}
 	@keyframes scroll {
 		0% {
 			transform: translateX(100%);
 		}
 		100% {
-			transform: translateX(-170%);
+			transform: translateX(-200%);
 		}
 	}
 	.category-title {
-		color: #c084fc;
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin: 1rem 0;
+		@apply text-white text-xl font-bold uppercase tracking-wide;
 	}
-	.language-item {
-		border: 2px solid #c084fc;
-		background: rgba(169, 85, 247, 0.1);
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
+	.badge {
+		@apply transition-all duration-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
 	}
-	.language-logo {
-		width: 20px; /* Adjust size as needed */
-		height: 20px; /* Adjust size as needed */
+	.logo-box {
+		@apply w-6 h-6 rounded-sm flex items-center justify-center text-xs font-bold text-white;
 	}
+	.logo-cpp { background-color: #00599C; }      /* C++ Blue */
+	.logo-cs { background-color: #9B4F96; }        /* C# Purple */
+	.logo-python { background-color: #306998; }    /* Python Blue */
+	.logo-rust { background-color: #000000; }      /* Rust Black */
+	.logo-java { background-color: #EA2D2E; }      /* Java Red */
+	.logo-ts { background-color: #007ACC; }        /* TypeScript Blue */
+	.logo-go { background-color: #00ADD8; }        /* Go Blue */
+	.logo-luau { background-color: #6E6E6E; }       /* Lua Gray */
 </style>
 
 <Layout title="My Skills">
 	<main class="flex h-screen">
 		<div class="m-auto w-full">
-			<!-- navbar -->
 			<Navbar />
 
-			<!-- hero -->
 			<AnimatedScroll client:load>
 				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
 					<div class="w-full">
 						<div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
 							<p class="text-white text-2xl font-medium text-center">My Skills</p>
-							<p class="text-gray-300 text-center">Here are the programming languages and technologies I work with.</p>
+							<p class="text-gray-300 text-center">Here’s a look at all the technologies, languages, and dance crews that are a part of my journey.</p>
 							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
-							<div class="scrolling-wrapper">
+
+							<!-- Frontend -->
+							<p class="category-title mb-2">Frontend</p>
+							<div class="scrolling-wrapper mb-6">
 								<div class="scrolling-container flex items-center gap-4">
-									<!-- Frontend Languages -->
-									<div>
-										<p class="category-title">Frontend</p>
-										<div class="language-item">
-											<span class="language-logo">HTML</span>
-											<span class="text-white font-medium">HTML5</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">CSS</span>
-											<span class="text-white font-medium">CSS3</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">JS</span>
-											<span class="text-white font-medium">JavaScript</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">React</span>
-											<span class="text-white font-medium">React.js</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">Vue</span>
-											<span class="text-white font-medium">Vue.js</span>
-										</div>
-									</div>
+									<div class="badge"><span class="text-white font-medium">HTML5 🔶</span></div>
+									<div class="badge"><span class="text-white font-medium">CSS3 🎨</span></div>
+									<div class="badge"><span class="text-white font-medium">JavaScript ⚡</span></div>
+									<div class="badge"><span class="text-white font-medium">React ⚛️</span></div>
+									<div class="badge"><span class="text-white font-medium">Vue 🟩</span></div>
+									<div class="badge"><span class="text-white font-medium">Tailwind 💨</span></div>
+									<div class="badge"><span class="text-white font-medium">Svelte 🔥</span></div>
+									<div class="badge"><span class="text-white font-medium">Astro 🚀</span></div>
+								</div>
+							</div>
 
-									<!-- Backend Languages -->
-									<div>
-										<p class="category-title">Backend</p>
-										<div class="language-item">
-											<span class="language-logo">Node</span>
-											<span class="text-white font-medium">Node.js</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">Python</span>
-											<span class="text-white font-medium">Python</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">C#</span>
-											<span class="text-white font-medium">C#</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">C++</span>
-											<span class="text-white font-medium">C++</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">Rust</span>
-											<span class="text-white font-medium">Rust</span>
-										</div>
-									</div>
+							<!-- Backend -->
+							<p class="category-title mb-2">Backend</p>
+							<div class="scrolling-wrapper mb-6">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge"><span class="text-white font-medium">Node.js 🟢</span></div>
+									<div class="badge"><span class="text-white font-medium">Express.js ⚙️</span></div>
+									<div class="badge"><span class="text-white font-medium">Deno 🦕</span></div>
+									<div class="badge"><span class="text-white font-medium">FastAPI ⚡</span></div>
+									<div class="badge"><span class="text-white font-medium">Flask 🍶</span></div>
+									<div class="badge"><span class="text-white font-medium">Django 🧩</span></div>
+								</div>
+							</div>
 
-									<!-- Other Languages -->
-									<div>
-										<p class="category-title">Other Languages</p>
-										<div class="language-item">
-											<span class="language-logo">Web</span>
-											<span class="text-white font-medium">Web Development</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">Dance</span>
-											<span class="text-white font-medium">Dancing</span>
-										</div>
-										<div class="language-item">
-											<span class="language-logo">Lunatix</span>
-											<span class="text-white font-medium">Lunatix Crew</span>
-										</div>
+							<!-- Languages -->
+							<p class="category-title mb-2">Languages</p>
+							<div class="scrolling-wrapper mb-6">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge">
+										<div class="logo-box logo-cpp">C++</div>
+										<span class="text-white font-medium">C++</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-cs">C#</div>
+										<span class="text-white font-medium">C#</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-python">Py</div>
+										<span class="text-white font-medium">Python</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-rust">R</div>
+										<span class="text-white font-medium">Rust</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-java">J</div>
+										<span class="text-white font-medium">Java</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-ts">TS</div>
+										<span class="text-white font-medium">TypeScript</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-go">Go</div>
+										<span class="text-white font-medium">Go</span>
+									</div>
+									<div class="badge">
+										<div class="logo-box logo-luau">Lu</div>
+										<span class="text-white font-medium">Luau</span>
 									</div>
 								</div>
 							</div>
+
+							<!-- Dance -->
+							<p class="category-title mb-2">Dance</p>
+							<div class="scrolling-wrapper">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="badge"><span class="text-white font-medium">Dancing 🕺</span></div>
+									<div class="badge">
+										<img src="/crewnique.jpg" alt="Crewnique" class="h-8 rounded-sm" />
+										<span class="text-white font-medium">Crewnique</span>
+									</div>
+									<div class="badge">
+										<img src="/lunatix.png" alt="Lunatix" class="h-8 rounded-sm" />
+										<span class="text-white font-medium">Lunatix</span>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
