@@ -1,40 +1,132 @@
 ---
+// TypeScript interface defining the expected props for this layout component
 interface Props {
-	title: string;
+  title: string;  // The page title that will be used in the <title> tag
+  description?: string; // Optional description meta tag
+  ogImage?: string; // Optional custom OpenGraph image
 }
 
-const { title } = Astro.props;
+// Destructure props with default values for optional properties
+const { 
+  title = "Hello, I'm Alina!", 
+  description = "This is my personal website.",
+  ogImage = "/logo.jpg" 
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="title" content="Hello, I'm Alina!">
-		<meta name="description" content="This is my personal website." />
-		<meta property="og:title" content="Hello, I'm Alina!">
-		<meta property="og:description" content="This is my personal website." />
-		<meta property="og:image" content="/logo.jpg" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/jpg" href="/logo.jpg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<style>
-			.background_image {
-				background-image: url(https://wallpapercave.com/wp/wp8865526.jpg);
-				position: fixed;
-				inset: 0;
-				z-index: -1;
-				background-position: center;
-				background-size: cover;
-				pointer-events: none;
-				filter: blur(200px);
-				-webkit-filter: blur(200px);
-			}
-		</style>
-	</head>
-	<body class="bg-[#010101]">
-		<div class="background_image"></div>
-		<slot />
-	</body>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#010101" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="personal website, portfolio, Alina" />
+    <meta name="author" content="Alina" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Alina's personal logo" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.url).href} />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/jpg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Generator and other meta -->
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Page Title -->
+    <title>{title}</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://wallpapercave.com/wp/wp8865526.jpg" as="image" />
+    
+    <!-- Inline Critical CSS -->
+    <style is:inline>
+      /* Smooth scrolling for the whole document */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Background image styles with performance optimizations */
+      .background_image {
+        background-image: url(https://wallpapercave.com/wp/wp8865526.jpg);
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        pointer-events: none;
+        filter: blur(200px);
+        -webkit-filter: blur(200px);
+        will-change: transform; /* Optimizes animations */
+        backface-visibility: hidden; /* Prevents flickering */
+      }
+      
+      /* Fallback for browsers that don't support backdrop-filter */
+      @supports not (backdrop-filter: blur(10px)) {
+        body::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(1, 1, 1, 0.85);
+          z-index: -2;
+        }
+      }
+    </style>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://wallpapercave.com" crossorigin />
+  </head>
+  
+  <body class="bg-[#010101] text-gray-100 antialiased min-h-screen">
+    <!-- Background image layer -->
+    <div class="background_image" aria-hidden="true"></div>
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-[#010101] focus:text-white focus:px-4 focus:py-2 focus:rounded focus:z-50">
+      Skip to content
+    </a>
+    
+    <!-- Main content slot where page content will be injected -->
+    <main id="main-content">
+      <slot />
+    </main>
+    
+    <!-- Performance optimization: Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="/styles/non-critical.css" media="print" onload="this.media='all'" />
+    
+    <!-- Noscript fallback -->
+    <noscript>
+      <style>
+        .background_image {
+          filter: none;
+          -webkit-filter: none;
+        }
+      </style>
+    </noscript>
+  </body>
 </html>
