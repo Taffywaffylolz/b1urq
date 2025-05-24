@@ -1,176 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AnimatedScroll from "../components/AnimatedScroll";
-import Navbar from "../components/Navbar.astro";
+import AnimatedColors from "../components/AnimatedColors";
 ---
 
-<style>
-  .scrolling-wrapper {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  .scrolling-container {
-    animation: scroll 30s linear infinite;
-  }
-  @keyframes scroll {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-200%);
-    }
-  }
-  .glow:hover {
-    filter: drop-shadow(0 0 8px #a855f7);
-  }
-
-  .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .skill-box {
-    background-color: var(--baby-blue);
-    border: 2px solid var(--light-pink);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .skill-box:hover {
-    transform: scale(1.05);
-  }
-
-  .skill-box img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-
-  .skill-box span {
-    color: var(--light-pink);
-    font-weight: bold;
-  }
-</style>
-
-<Layout title="My Skills">
-  <main class="flex h-screen">
-    <div class="m-auto w-full">
-      <!-- navbar -->
-      <Navbar />
-
-      <!-- Skills section -->
-      <AnimatedScroll client:load>
-        <div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
-          <div class="w-full">
-            <div class="border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
-              <p class="text-white text-2xl font-medium text-center">My Skills</p>
-              <p class="text-gray-300 text-center">All the tools and art forms I’ve mastered along the way.</p>
-              <div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
-
-              <!-- Frontend -->
-              <div class="scrolling-wrapper">
-                <div class="scrolling-container flex items-center gap-6">
-                  <h2 class="text-xl text-purple-400 font-bold">Frontend</h2>
-                  <div class="skills-container">
-                    <div class="skill-box">
-                      <img src="/images/html.svg" alt="HTML" />
-                      <span>HTML</span>
+<Layout title="Skills">
+	<AnimatedColors client:load>
+		<div class="flex justify-center">
+			<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
+				<div class="space-y-4">
+					<div>
+                        <p class="text-text-main text-3xl font-medium">What are my skills?</p>
+					    <p class="text-text-muted text-xl">Take a look...</p>
                     </div>
-                    <div class="skill-box">
-                      <img src="/images/css.svg" alt="CSS" />
-                      <span>CSS</span>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative rounded-lg shadow-lg overflow-hidden bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
+                            <div class="absolute inset-0 opacity-35 bg-[url(/react.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
+                            <div class="relative z-10 space-y-2">
+                                <p class="text-left text-xl font-medium text-text-main">Web Development</p>
+                                <p class="text-left text-text-muted">I have been messing with web development ever since I was 9 years old. I first started with just HTML and CSS but then moved onto frameworks like React, Svelte, ect.</p>
+                            </div>
+                        </div>
+                        <div class="relative rounded-lg shadow-lg overflow-hidden bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
+                            <div class="absolute inset-0 opacity-35 bg-[url(/discord.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
+                            <div class="relative z-10 space-y-2">
+                                <p class="text-left text-xl font-medium text-text-main">Bot Development</p>
+                                <p class="text-left text-text-muted">I make Discord bots occasionally. It's fun tbh I like it lol. I've been working on a Fortnite skin checker bot for Discord last few weeks tho.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-box">
-                      <img src="/images/javascript.svg" alt="JavaScript" />
-                      <span>JavaScript</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/tailwind.svg" alt="Tailwind" />
-                      <span>Tailwind</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/astro.svg" alt="Astro" />
-                      <span>Astro</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Backend -->
-              <div class="scrolling-wrapper mt-10">
-                <div class="scrolling-container flex items-center gap-6">
-                  <h2 class="text-xl text-purple-400 font-bold">Backend</h2>
-                  <div class="skills-container">
-                    <div class="skill-box">
-                      <img src="/images/nodejs.svg" alt="Node.js" />
-                      <span>Node.js</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/express.svg" alt="Express.js" />
-                      <span>Express.js</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/php.svg" alt="PHP" />
-                      <span>PHP</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Languages -->
-              <div class="scrolling-wrapper mt-10">
-                <div class="scrolling-container flex items-center gap-6">
-                  <h2 class="text-xl text-purple-400 font-bold">Languages</h2>
-                  <div class="skills-container">
-                    <div class="skill-box">
-                      <img src="/images/python.svg" alt="Python" />
-                      <span>Python</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/rust.svg" alt="Rust" />
-                      <span>Rust</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/cpp.svg" alt="C++" />
-                      <span>C++</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/csharp.svg" alt="C#" />
-                      <span>C#</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/lua.svg" alt="Lua" />
-                      <span>Lua</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Dance -->
-              <div class="scrolling-wrapper mt-10">
-                <div class="scrolling-container flex items-center gap-6">
-                  <h2 class="text-xl text-purple-400 font-bold">Dance</h2>
-                  <div class="skills-container">
-                    <div class="skill-box">
-                      <img src="/images/crewnique.svg" alt="Crewnique" />
-                      <span>Crewnique</span>
-                    </div>
-                    <div class="skill-box">
-                      <img src="/images/lunatix.svg" alt="Lunatix" />
-                      <span>Lunatix</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </AnimatedScroll>
-    </div>
-  </main>
+				</div>
+			</AnimatedScroll>
+		</div>
+	</AnimatedColors>
 </Layout>
